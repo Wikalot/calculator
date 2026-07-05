@@ -286,7 +286,12 @@ clear.addEventListener("click", () => {
 });
 
 equals.addEventListener("click", () => {
-    if ((text.textContent[0] == 0  && firstNum != 0) || (text.textContent[text.textContent.indexOf("+") + 1] == 0 && secondNum != 0)){
+    if (firstNum == "" && operator == "" && secondNum == "") {
+        return;
+    }
+    else if(text.textContent == "SYNTAX error!") {
+        return;
+    } else if ((text.textContent[0] == 0  && firstNum != 0) || (text.textContent[text.textContent.indexOf("+") + 1] == 0 && secondNum != 0)){
         text.textContent = "SYNTAX error!";       
     } else if (typeof firstNum != "number" ||
             typeof secondNum != "number"
@@ -297,17 +302,38 @@ equals.addEventListener("click", () => {
         text.textContent = result;
         firstNum = "";
         secondNum = "";
+        operator = "";
     } else if (operator == "-") {
-        text.textContent = subtract(firstNum, secondNum);
+        result = subtract(firstNum, secondNum);
+        text.textContent = result;
+        firstNum = "";
+        secondNum = "";
+        operator = "";
     } else if (operator == "*") {
-        text.textContent = multiply(firstNum, secondNum);
+        result = multiply(firstNum, secondNum);
+        text.textContent = result;
+        firstNum = "";
+        secondNum = "";
+        operator = "";
     } else if (operator == "/") {
-        text.textContent = divide(firstNum, secondNum);
+        result = divide(firstNum, secondNum);
+        text.textContent = result;
+        firstNum = "";
+        secondNum = "";
+        operator = "";
     }
 });
 
 plus.addEventListener("click", () => {
-    if (typeof firstNum != "number") {
+    if(text.textContent == "SYNTAX error!" ||
+        text.textContent.includes("+") ||
+        text.textContent.includes("-") ||
+        text.textContent.includes("*") ||
+        text.textContent.includes("/") ) {
+        return;
+    } else if (typeof firstNum != "number" && text.textContent != ""){
+        text.textContent = "";
+    } else if (typeof firstNum != "number") {
         text.textContent = text.textContent + "+";
     } else if (typeof secondNum != "number") {
         operator = "+";
@@ -320,7 +346,15 @@ plus.addEventListener("click", () => {
 });
 
 minus.addEventListener("click", () => {
-    if (typeof firstNum != "number") {
+    if(text.textContent == "SYNTAX error!" ||
+        text.textContent.includes("+") ||
+        text.textContent.includes("-") ||
+        text.textContent.includes("*") ||
+        text.textContent.includes("/") ) {
+        return;
+    } else if (typeof firstNum != "number" && text.textContent != ""){
+        text.textContent = "";
+    } else if (typeof firstNum != "number") {
         text.textContent = text.textContent + "-";
     } else if (typeof secondNum != "number") {
         operator = "-";
@@ -333,7 +367,15 @@ minus.addEventListener("click", () => {
 });
 
 mult.addEventListener("click", () => {
-    if (typeof firstNum != "number") {
+    if (text.textContent == "SYNTAX error!" ||
+        text.textContent.includes("+") ||
+        text.textContent.includes("-") ||
+        text.textContent.includes("*") ||
+        text.textContent.includes("/") ) {
+        return;
+    } else if (typeof firstNum != "number" && text.textContent != ""){
+        text.textContent = "";
+    } else if (typeof firstNum != "number") {
         text.textContent = text.textContent + "*";
     } else if (typeof secondNum != "number") {
         operator = "*";
@@ -346,7 +388,15 @@ mult.addEventListener("click", () => {
 });
 
 division.addEventListener("click", () => {
-    if (typeof firstNum != "number") {
+    if (text.textContent == "SYNTAX error!" ||
+        text.textContent.includes("+") ||
+        text.textContent.includes("-") ||
+        text.textContent.includes("*") ||
+        text.textContent.includes("/") ) {
+        return;
+    } else if (typeof firstNum != "number" && text.textContent != ""){
+        text.textContent = "";
+    } else if (typeof firstNum != "number") {
         text.textContent = text.textContent + "/";
     } else if (typeof secondNum != "number") {
         operator = "/";
