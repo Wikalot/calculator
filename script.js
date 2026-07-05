@@ -20,13 +20,29 @@ let secondNum = "";
 
 function operate(num1, oper, num2) {
     if (oper == "+") {
-        return add(num1, num2);
+        result = add(num1, num2);
+        text.textContent = result;
+        firstNum = "";
+        secondNum = "";
+        operator = "";
     } else if (oper == "-") {
-        return subtract(num1, num2);
+        result = subtract(num1, num2);
+        text.textContent = result;
+        firstNum = "";
+        secondNum = "";
+        operator = "";
     } else if (oper == "*") {
-        return multiply(num1, num2);
+        result = multiply(num1, num2);
+        text.textContent = result;
+        firstNum = "";
+        secondNum = "";
+        operator = "";
     } else if (oper == "/") {
-        return divide(num1, num2);
+        result = divide(num1, num2);
+        text.textContent = result;
+        firstNum = "";
+        secondNum = "";
+        operator = "";
     }
 }
 
@@ -297,30 +313,8 @@ equals.addEventListener("click", () => {
             typeof secondNum != "number"
     ) {
         text.textContent = "SYNTAX error!";
-    } else if (operator == "+") {
-        result = add(firstNum, secondNum);
-        text.textContent = result;
-        firstNum = "";
-        secondNum = "";
-        operator = "";
-    } else if (operator == "-") {
-        result = subtract(firstNum, secondNum);
-        text.textContent = result;
-        firstNum = "";
-        secondNum = "";
-        operator = "";
-    } else if (operator == "*") {
-        result = multiply(firstNum, secondNum);
-        text.textContent = result;
-        firstNum = "";
-        secondNum = "";
-        operator = "";
-    } else if (operator == "/") {
-        result = divide(firstNum, secondNum);
-        text.textContent = result;
-        firstNum = "";
-        secondNum = "";
-        operator = "";
+    } else {
+        operate(firstNum, operator, secondNum);
     }
 });
 
