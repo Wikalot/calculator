@@ -209,9 +209,9 @@ zero.addEventListener("click", () => {
 });
 
 clear.addEventListener("click", () => {
-    console.log(firstNum, secondNum);
     firstNum = "";
     operator = "";
     secondNum = "";
     text.textContent = "";
 });
+
