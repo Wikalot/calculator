@@ -445,3 +445,11 @@ decimal.addEventListener("click", () => {
         text.textContent = text.textContent + ".";
     } 
 })
+
+backsp.addEventListener("click", () => {
+    let textArr = Array.from(text.textContent);
+    textArr.pop();
+    let textChanged = textArr.toString();
+    textChanged = textChanged.replaceAll(",", "");
+    text.textContent = textChanged;
+});
