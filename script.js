@@ -1,17 +1,21 @@
 function add(a, b) {
-    return a + b;
+    let result = a + b;
+    return Math.round(result * 10000000000) / 10000000000;
 }
 
 function subtract(a, b) {
-    return a - b;
+    let result = a - b;
+    return Math.round(result * 10000000000) / 10000000000;
 }
 
 function multiply(a, b) {
-    return a * b;
+    let result = a * b;
+    return Math.round(result * 10000000000) / 10000000000;
 }
 
 function divide(a, b) {
-    return a / b;
+    let result = a / b;
+    return Math.round(result * 10000000000) / 10000000000;
 }
 
 let firstNum = "";
