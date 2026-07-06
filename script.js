@@ -22,25 +22,29 @@ function operate(num1, oper, num2) {
     if (oper == "+") {
         result = add(num1, num2);
         text.textContent = result;
-        firstNum = "";
+        firstNum = result;
         secondNum = "";
         operator = "";
     } else if (oper == "-") {
         result = subtract(num1, num2);
         text.textContent = result;
-        firstNum = "";
+        firstNum = result;
         secondNum = "";
         operator = "";
     } else if (oper == "*") {
         result = multiply(num1, num2);
         text.textContent = result;
-        firstNum = "";
+        firstNum = result;
         secondNum = "";
         operator = "";
     } else if (oper == "/") {
+        if (secondNum == 0){
+            text.textContent = "Error!"
+            return;
+        }
         result = divide(num1, num2);
         text.textContent = result;
-        firstNum = "";
+        firstNum = result;
         secondNum = "";
         operator = "";
     }
@@ -65,12 +69,15 @@ const zero = document.querySelector(".zero");
 let text = document.querySelector(".text");
 
 one.addEventListener("click", () => {
-    if (text.textContent == "SYNTAX error!") {
+    if (text.textContent == "Error!") {
         return;
     } else if(typeof firstNum != "number" && text.textContent != ""){
         text.textContent = "";
+
         firstNum = firstNum.toString() + "1"
+
         firstNum = Number(firstNum);
+
         text.textContent = text.textContent + "1";
     } else if (text.textContent.includes("+") ||
         text.textContent.includes("-") ||
@@ -78,22 +85,29 @@ one.addEventListener("click", () => {
         text.textContent.includes("/")
         ) {
         secondNum = secondNum.toString() + "1";
+
         secondNum = Number(secondNum);
+
         text.textContent = text.textContent + "1";
     } else {
         firstNum = firstNum.toString() + "1"
+
         firstNum = Number(firstNum);
+
         text.textContent = text.textContent + "1";
     }
 });
 
 two.addEventListener("click", () => {
-    if (text.textContent == "SYNTAX error!") {
+    if (text.textContent == "Error!") {
         return;
     } else if(typeof firstNum != "number" && text.textContent != ""){
         text.textContent = "";
+
         firstNum = firstNum.toString() + "2"
+
         firstNum = Number(firstNum);
+
         text.textContent = text.textContent + "2";
     } else if (text.textContent.includes("+") ||
         text.textContent.includes("-") ||
@@ -101,22 +115,29 @@ two.addEventListener("click", () => {
         text.textContent.includes("/")
         ) {
         secondNum = secondNum.toString() + "2";
+
         secondNum = Number(secondNum);
+
         text.textContent = text.textContent + "2";
     } else {
         firstNum = firstNum.toString() + "2"
+
         firstNum = Number(firstNum);
+
         text.textContent = text.textContent + "2";
     }
 });
 
 three.addEventListener("click", () => {
-    if (text.textContent == "SYNTAX error!") {
+    if (text.textContent == "Error!") {
         return;
     } else if(typeof firstNum != "number" && text.textContent != ""){
         text.textContent = "";
+
         firstNum = firstNum.toString() + "3"
+
         firstNum = Number(firstNum);
+
         text.textContent = text.textContent + "3";
     } else if (text.textContent.includes("+") ||
         text.textContent.includes("-") ||
@@ -124,22 +145,29 @@ three.addEventListener("click", () => {
         text.textContent.includes("/")
         ) {
         secondNum = secondNum.toString() + "3";
+
         secondNum = Number(secondNum);
+
         text.textContent = text.textContent + "3";
     } else {
         firstNum = firstNum.toString() + "3"
+
         firstNum = Number(firstNum);
+
         text.textContent = text.textContent + "3";
     }
 });
 
 four.addEventListener("click", () => {
-    if (text.textContent == "SYNTAX error!") {
+    if (text.textContent == "Error!") {
         return;
     } else if(typeof firstNum != "number" && text.textContent != ""){
         text.textContent = "";
+
         firstNum = firstNum.toString() + "4"
+
         firstNum = Number(firstNum);
+
         text.textContent = text.textContent + "4";
     } else if (text.textContent.includes("+") ||
         text.textContent.includes("-") ||
@@ -147,22 +175,29 @@ four.addEventListener("click", () => {
         text.textContent.includes("/")
         ) {
         secondNum = secondNum.toString() + "4";
+
         secondNum = Number(secondNum);
+
         text.textContent = text.textContent + "4";
     } else {
         firstNum = firstNum.toString() + "4"
+
         firstNum = Number(firstNum);
+
         text.textContent = text.textContent + "4";
     }
 });
 
 five.addEventListener("click", () => {
-    if (text.textContent == "SYNTAX error!") {
+    if (text.textContent == "Error!") {
         return;
     } else if(typeof firstNum != "number" && text.textContent != ""){
         text.textContent = "";
+
         firstNum = firstNum.toString() + "5"
+
         firstNum = Number(firstNum);
+
         text.textContent = text.textContent + "5";
     } else if (text.textContent.includes("+") ||
         text.textContent.includes("-") ||
@@ -170,22 +205,29 @@ five.addEventListener("click", () => {
         text.textContent.includes("/")
         ) {
         secondNum = secondNum.toString() + "5";
+
         secondNum = Number(secondNum);
+
         text.textContent = text.textContent + "5";
     } else {
         firstNum = firstNum.toString() + "5"
+
         firstNum = Number(firstNum);
+
         text.textContent = text.textContent + "5";
     }
 });
 
 six.addEventListener("click", () => {
-    if (text.textContent == "SYNTAX error!") {
+    if (text.textContent == "Error!") {
         return;
     } else if(typeof firstNum != "number" && text.textContent != ""){
         text.textContent = "";
+
         firstNum = firstNum.toString() + "6"
+
         firstNum = Number(firstNum);
+
         text.textContent = text.textContent + "6";
     } else if (text.textContent.includes("+") ||
         text.textContent.includes("-") ||
@@ -193,22 +235,29 @@ six.addEventListener("click", () => {
         text.textContent.includes("/")
         ) {
         secondNum = secondNum.toString() + "6";
+
         secondNum = Number(secondNum);
+
         text.textContent = text.textContent + "6";
     } else {
         firstNum = firstNum.toString() + "6"
+
         firstNum = Number(firstNum);
+
         text.textContent = text.textContent + "6";
     }
 });
 
 seven.addEventListener("click", () => {
-    if (text.textContent == "SYNTAX error!") {
+    if (text.textContent == "Error!") {
         return;
     } else if(typeof firstNum != "number" && text.textContent != ""){
         text.textContent = "";
+
         firstNum = firstNum.toString() + "7"
+
         firstNum = Number(firstNum);
+
         text.textContent = text.textContent + "7";
     } else if (text.textContent.includes("+") ||
         text.textContent.includes("-") ||
@@ -216,22 +265,29 @@ seven.addEventListener("click", () => {
         text.textContent.includes("/")
         ) {
         secondNum = secondNum.toString() + "7";
+
         secondNum = Number(secondNum);
+
         text.textContent = text.textContent + "7";
     } else {
         firstNum = firstNum.toString() + "7"
+
         firstNum = Number(firstNum);
+
         text.textContent = text.textContent + "7";
     }
 });
 
 eight.addEventListener("click", () => {
-    if (text.textContent == "SYNTAX error!") {
+    if (text.textContent == "Error!") {
         return;
     } else if(typeof firstNum != "number" && text.textContent != ""){
         text.textContent = "";
+
         firstNum = firstNum.toString() + "8"
+
         firstNum = Number(firstNum);
+
         text.textContent = text.textContent + "8";
     } else if (text.textContent.includes("+") ||
         text.textContent.includes("-") ||
@@ -239,22 +295,29 @@ eight.addEventListener("click", () => {
         text.textContent.includes("/")
         ) {
         secondNum = secondNum.toString() + "8";
+
         secondNum = Number(secondNum);
+
         text.textContent = text.textContent + "8";
     } else {
         firstNum = firstNum.toString() + "8"
+
         firstNum = Number(firstNum);
+
         text.textContent = text.textContent + "8";
     }
 });
 
 nine.addEventListener("click", () => {
-    if (text.textContent == "SYNTAX error!") {
+    if (text.textContent == "Error!") {
         return;
     } else if(typeof firstNum != "number" && text.textContent != ""){
         text.textContent = "";
+
         firstNum = firstNum.toString() + "9"
+
         firstNum = Number(firstNum);
+
         text.textContent = text.textContent + "9";
     } else if (text.textContent.includes("+") ||
         text.textContent.includes("-") ||
@@ -262,22 +325,29 @@ nine.addEventListener("click", () => {
         text.textContent.includes("/")
         ) {
         secondNum = secondNum.toString() + "9";
+
         secondNum = Number(secondNum);
+
         text.textContent = text.textContent + "9";
     } else {
         firstNum = firstNum.toString() + "9"
+
         firstNum = Number(firstNum);
+
         text.textContent = text.textContent + "9";
     }
 });
 
 zero.addEventListener("click", () => {
-    if (text.textContent == "SYNTAX error!") {
+    if (text.textContent == "Error!") {
         return;
     } else if(typeof firstNum != "number" && text.textContent != ""){
         text.textContent = "";
+
         firstNum = firstNum.toString() + "0"
+
         firstNum = Number(firstNum);
+
         text.textContent = text.textContent + "0";
     } else if (text.textContent.includes("+") ||
         text.textContent.includes("-") ||
@@ -285,19 +355,26 @@ zero.addEventListener("click", () => {
         text.textContent.includes("/")
         ) {
         secondNum = secondNum.toString() + "0";
+
         secondNum = Number(secondNum);
+
         text.textContent = text.textContent + "0";
     } else {
         firstNum = firstNum.toString() + "0"
+
         firstNum = Number(firstNum);
+
         text.textContent = text.textContent + "0";
     }
 });
 
 clear.addEventListener("click", () => {
     firstNum = "";
+
     operator = "";
+
     secondNum = "";
+
     text.textContent = "";
 });
 
@@ -305,69 +382,90 @@ equals.addEventListener("click", () => {
     if (firstNum == "" && operator == "" && secondNum == "") {
         return;
     }
-    else if(text.textContent == "SYNTAX error!") {
+    else if(text.textContent == "Error!") {
         return;
     } else if ((text.textContent[0] == 0  && firstNum != 0) || (text.textContent[text.textContent.indexOf("+") + 1] == 0 && secondNum != 0)){
-        text.textContent = "SYNTAX error!";       
+        text.textContent = "Error!";       
     } else if (typeof firstNum != "number" ||
             typeof secondNum != "number"
     ) {
-        text.textContent = "SYNTAX error!";
+        text.textContent = "Error!";
     } else {
         operate(firstNum, operator, secondNum);
     }
 });
 
 plus.addEventListener("click", () => {
-    if(text.textContent == "SYNTAX error!" ||
-        text.textContent.includes("+") ||
+    if (text.textContent == "Error!") {
+        return;
+    } else if ((text.textContent.includes("+") ||
         text.textContent.includes("-") ||
         text.textContent.includes("*") ||
-        text.textContent.includes("/") ) {
-        return;
+        text.textContent.includes("/")) && secondNum != "") {
+        operate(firstNum, operator, secondNum);
+
+        text.textContent = text.textContent + "+"
+
+        operator = "+";
     } else if (typeof firstNum != "number" && text.textContent != ""){
         text.textContent = "";
     } else if (typeof firstNum != "number") {
         text.textContent = text.textContent + "+";
     } else if (typeof secondNum != "number") {
         operator = "+";
+
         text.textContent = text.textContent + "+";
     } else  {
         operator = "+";
+
         let index = text.textContent.index(firstNum) + 1;
+
         text.textContent[index] = "+";
     }
 });
 
 minus.addEventListener("click", () => {
-    if(text.textContent == "SYNTAX error!" ||
-        text.textContent.includes("+") ||
+    if (text.textContent == "Error!") {
+        return;
+    } else if ((text.textContent.includes("+") ||
         text.textContent.includes("-") ||
         text.textContent.includes("*") ||
-        text.textContent.includes("/") ) {
-        return;
+        text.textContent.includes("/")) && secondNum != "") {
+        operate(firstNum, operator, secondNum);
+
+        text.textContent = text.textContent + "-"
+
+        operator = "-";
     } else if (typeof firstNum != "number" && text.textContent != ""){
         text.textContent = "";
     } else if (typeof firstNum != "number") {
         text.textContent = text.textContent + "-";
     } else if (typeof secondNum != "number") {
         operator = "-";
+
         text.textContent = text.textContent + "-";
     } else  {
         operator = "-";
+
         let index = text.textContent.index(firstNum) + 1;
+
         text.textContent[index] = "-";
     }
 });
 
 mult.addEventListener("click", () => {
-    if (text.textContent == "SYNTAX error!" ||
-        text.textContent.includes("+") ||
+    if (text.textContent == "Error!") {
+        return;
+    } else if ((text.textContent.includes("+") ||
         text.textContent.includes("-") ||
         text.textContent.includes("*") ||
-        text.textContent.includes("/") ) {
-        return;
-    } else if (typeof firstNum != "number" && text.textContent != ""){
+        text.textContent.includes("/")) && secondNum != "") {
+        operate(firstNum, operator, secondNum);
+
+        text.textContent = text.textContent + "*"
+
+        operator = "*";
+    }  else if (typeof firstNum != "number" && text.textContent != ""){
         text.textContent = "";
     } else if (typeof firstNum != "number") {
         text.textContent = text.textContent + "*";
@@ -376,19 +474,26 @@ mult.addEventListener("click", () => {
         text.textContent = text.textContent + "*";
     } else  {
         operator = "*";
+
         let index = text.textContent.index(firstNum) + 1;
+
         text.textContent[index] = "*";
     }
 });
 
 division.addEventListener("click", () => {
-    if (text.textContent == "SYNTAX error!" ||
-        text.textContent.includes("+") ||
+    if (text.textContent == "Error!") {
+        return;
+    } else if ((text.textContent.includes("+") ||
         text.textContent.includes("-") ||
         text.textContent.includes("*") ||
-        text.textContent.includes("/") ) {
-        return;
-    } else if (typeof firstNum != "number" && text.textContent != ""){
+        text.textContent.includes("/")) && secondNum != "") {
+        operate(firstNum, operator, secondNum);
+
+        text.textContent = text.textContent + "/"
+
+        operator = "/";
+    }  else if (typeof firstNum != "number" && text.textContent != ""){
         text.textContent = "";
     } else if (typeof firstNum != "number") {
         text.textContent = text.textContent + "/";
@@ -397,7 +502,9 @@ division.addEventListener("click", () => {
         text.textContent = text.textContent + "/";
     } else  {
         operator = "/";
+
         let index = text.textContent.index(firstNum) + 1;
+
         text.textContent[index] = "/";
     }
 });
