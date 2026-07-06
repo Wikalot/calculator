@@ -84,7 +84,7 @@ one.addEventListener("click", () => {
 
         text.textContent = text.textContent + "1";
     } else {
-        firstNum = firstNum.toString() + "1"
+        firstNum = firstNum.toString() + "1";
 
         firstNum = Number(firstNum);
 
@@ -106,7 +106,7 @@ two.addEventListener("click", () => {
 
         text.textContent = text.textContent + "2";
     } else {
-        firstNum = firstNum.toString() + "2"
+        firstNum = firstNum.toString() + "2";
 
         firstNum = Number(firstNum);
 
@@ -128,7 +128,7 @@ three.addEventListener("click", () => {
 
         text.textContent = text.textContent + "3";
     } else {
-        firstNum = firstNum.toString() + "3"
+        firstNum = firstNum.toString() + "3";
 
         firstNum = Number(firstNum);
 
@@ -150,7 +150,7 @@ four.addEventListener("click", () => {
 
         text.textContent = text.textContent + "4";
     } else {
-        firstNum = firstNum.toString() + "4"
+        firstNum = firstNum.toString() + "4";
 
         firstNum = Number(firstNum);
 
@@ -172,7 +172,7 @@ five.addEventListener("click", () => {
 
         text.textContent = text.textContent + "5";
     } else {
-        firstNum = firstNum.toString() + "5"
+        firstNum = firstNum.toString() + "5";
 
         firstNum = Number(firstNum);
 
@@ -194,7 +194,7 @@ six.addEventListener("click", () => {
 
         text.textContent = text.textContent + "6";
     } else {
-        firstNum = firstNum.toString() + "6"
+        firstNum = firstNum.toString() + "6";
 
         firstNum = Number(firstNum);
 
@@ -216,7 +216,7 @@ seven.addEventListener("click", () => {
 
         text.textContent = text.textContent + "7";
     } else {
-        firstNum = firstNum.toString() + "7"
+        firstNum = firstNum.toString() + "7";
 
         firstNum = Number(firstNum);
 
@@ -238,7 +238,7 @@ eight.addEventListener("click", () => {
 
         text.textContent = text.textContent + "8";
     } else {
-        firstNum = firstNum.toString() + "8"
+        firstNum = firstNum.toString() + "8";
 
         firstNum = Number(firstNum);
 
@@ -260,7 +260,7 @@ nine.addEventListener("click", () => {
 
         text.textContent = text.textContent + "9";
     } else {
-        firstNum = firstNum.toString() + "9"
+        firstNum = firstNum.toString() + "9";
 
         firstNum = Number(firstNum);
 
@@ -282,7 +282,7 @@ zero.addEventListener("click", () => {
 
         text.textContent = text.textContent + "0";
     } else {
-        firstNum = firstNum.toString() + "0"
+        firstNum = firstNum.toString() + "0";
 
         firstNum = Number(firstNum);
 
@@ -421,3 +421,23 @@ division.addEventListener("click", () => {
         text.textContent[index] = "/";
     }
 });
+
+decimal.addEventListener("click", () => {
+    if (text.textContent == "Error!") {
+        return;
+    }  else if (text.textContent.includes("+") ||
+        text.textContent.includes("-") ||
+        text.textContent.includes("*") ||
+        text.textContent.includes("/")
+        ) {
+        if (!secondNum.toString().includes(".")) {
+            secondNum = secondNum.toString() + ".";
+
+            text.textContent = text.textContent + ".";
+        }
+    } else if (!firstNum.toString().includes(".")) {
+        firstNum = firstNum.toString() + ".";
+
+        text.textContent = text.textContent + ".";
+    } 
+})
