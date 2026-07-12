@@ -1,12 +1,23 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    max-width: 100%;
+    max-height: 100%;
+}
+
 .calc {
     display: flex;
     flex-wrap: wrap;
-    width: 200px;
-    height: 150px;
+    width: 600px;
+    height: 450px;
 }
 
 .calc button {
     flex: 0 1 16.666%;
+    font-size: 28px;
 }
 
 .calc .display {
@@ -25,6 +36,7 @@
     background-color: rgb(223, 216, 216);
     border: 1px solid rgb(100, 95, 95);
     border-radius: 2px;
+    font-size: 28px;
 }
 
 .clear,
